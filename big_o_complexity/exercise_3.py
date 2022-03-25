@@ -1,28 +1,33 @@
-def min(number_list):
-    min_val = number_list[0]
-    for el in number_list:
-        if el < min_val:
-            min_val = el
-    return min_val
+from solutions import best_case_solution, worst_case_solution
 
-def get_product(number_list, i, j):
-    return number_list[i] * number_list[j]
-
-def get_row_product(number_list, i):
-    N = len(number_list)
-    total = 0
-    for j in range(N):
-        total += get_product(number_list, i, j)
-    return total
-
-def check_min_divides_product(number_list):
-    N = len(number_list)
-    min_el = min(number_list)
-    total = 0
+def count_comparisons_in_find(elements_list, value):
+    """
+    Counts the number of comparisons required to find a value in a list.
+    """
+    N = len(elements_list)
+    comparison_count = 0
     for i in range(N):
-        total += get_row_product(number_list, i)
-    if total % min_el == 0:
-        return True
-    return False
+        comparison_count += 1
+        if elements_list[i] == value:
+            return comparison_count
+    return comparison_count
 
-print(check_min_divides_product([4, 6, 8, 2]))
+def num_comparisons(elements_list):
+    """
+    For the given input, counts the total number of comparisons that
+    are required to find each value in a list inside that same list.
+    """
+    total_comparison_count = 0
+    # Iterate over each value in the list
+    for el in elements_list:
+        # Search for the current value in the list and count the number of comparisons required
+        total_comparison_count += count_comparisons_in_find(elements_list, el)
+    return total_comparison_count
+
+### Uncomment this to check your guess
+# N = 100
+# size_multiplier = 10
+# best_case_complexity_multiplyer = num_comparisons(best_case_solution(size_multiplier*N)) / num_comparisons(best_case_solution(N))
+# worst_case_complexity_multiplyer = num_comparisons(worst_case_solution(size_multiplier*N)) / num_comparisons(worst_case_solution(N))
+# print(f'For a size increase of {size_multiplier}x, the best-case does {best_case_complexity_multiplyer}x more comparisons')
+# print(f'For a size increase of {size_multiplier}x, the worst-case does {worst_case_complexity_multiplyer}x more comparisons')

@@ -1,14 +1,22 @@
-def count_equalities_in_find(elements_list, value):
-    N = len(elements_list)
-    op_count = 0
-    for i in range(N):
-        op_count += 1
-        if elements_list[i] == value:
-            return op_count
-    return op_count
+# PART A
 
-def num_op(elements_list):
-    total_op_count = 0
-    for el in elements_list:
-        total_op_count += count_equalities_in_find(elements_list, el)
-    return num_op
+def find_duplicates_naive(unsorted_list):
+    N = len(unsorted_list)
+    have_duplicates = set()
+    for i in range(N):
+        # Look only for elements to the right of this one
+        for j in range(i+1, N):
+            if unsorted_list[i] == unsorted_list[j]:
+                have_duplicates.add(unsorted_list[i])
+    return have_duplicates
+
+# PART B
+
+def find_duplicates(unsorted_list):
+    sorted_list = sorted(unsorted_list) # O(N log N)
+    have_duplicates = set()
+    previous_el = None
+    for el in sorted_list:
+        # TODO: Utilise the fact the same elements will be adjacent
+        pass
+    return have_duplicates
