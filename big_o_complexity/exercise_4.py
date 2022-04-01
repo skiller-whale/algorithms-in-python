@@ -7,7 +7,7 @@ def find_duplicates_naive(unsorted_list):
         # Look only for elements to the right of this one
         for j in range(i+1, N):
             if unsorted_list[i] == unsorted_list[j]:
-                have_duplicates.add(unsorted_list[i])
+                have_duplicates.add(unsorted_list[i]) # O(1) time complexity
     return have_duplicates
 
 # PART B
