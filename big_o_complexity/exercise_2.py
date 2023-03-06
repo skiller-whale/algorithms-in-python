@@ -27,18 +27,18 @@ def check_min_divides_product(number_list):
         return True
     return False
 
-print(check_min_divides_product([4, 6, 8, 2]))
-
 ####### DO NOT EDIT THIS FUNCTION
-def time_function(func, *args):
+def time_function(func, input, *args):
     """
     Makes 100 calls to the provided function with the provided inputs
     and prints the time they took to run in total.
     """
     start = time.time()
     for _ in range(100):
-        func(*args)
-    print(f"100 calls to {func} took {time.time() - start}s")
+        func(input, *args)
+    print(f"(N = {len(input)}), 100 calls to {func.__name__} took {time.time() - start:.5f}s")
+
+    return time.time() - start
 
 # time_function(get_row_product, range(100, 200), 0)
 # time_function(get_row_product, range(100, 300), 0) # Double the input size
