@@ -1,5 +1,3 @@
-from solutions import best_case_solution, worst_case_solution
-
 def count_comparisons_in_find(elements_list, value):
     """
     Counts the number of comparisons required to find a value in a list.
@@ -27,6 +25,8 @@ def num_comparisons(elements_list):
 ### Uncomment this to check your guess
 # N = 100
 # size_multiplier = 10
+# best_case_solution = lambda N: [1 for _ in range(N)]
+# worst_case_solution = lambda N: range(N)
 # best_case_complexity_multiplyer = num_comparisons(best_case_solution(size_multiplier*N)) / num_comparisons(best_case_solution(N))
 # worst_case_complexity_multiplyer = num_comparisons(worst_case_solution(size_multiplier*N)) / num_comparisons(worst_case_solution(N))
 # print(f'For a size increase of {size_multiplier}x, the best-case does {best_case_complexity_multiplyer}x more comparisons')
