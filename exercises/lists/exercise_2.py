@@ -10,12 +10,12 @@ This function is not optimized at all.
 * What's the complexity of `count_occurrences`?
     Both `input_list and `numbers` have a non-constant size
        proportional to N. This means looping through either is O(N).
-    * Run the script to check your answer.
+    * Run the script, then open `count_occurrences_timing.png` to check your answer.
 
 * Implement `count_occurrences_optimized` so it has a lower
     time-complexity and the same behavior as `count_occurrences`.
     * What's the time complexity of your implementation?
-    * Run the script again to check your answer.
+    * Run the script again and reopen the plot to check your answer.
 
 HINT 1: Set/get on a dictionary takes O(1).
 HINT 2: There are multiple optimizations you can make.

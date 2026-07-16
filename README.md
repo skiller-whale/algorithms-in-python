@@ -18,10 +18,9 @@ During each session you'll be asked to write and edit code in some of the files.
 
 3. In a terminal, navigate to the `algorithms-in-python` directory you cloned.
 
-4. Make sure you have the `requests` package installed in a Python 3 environment. You can do that by running these two commands:
+4. Install the required packages in a Python 3 environment:
     ```sh
-    python3 -m ensurepip
-    python3 -m pip install requests
+    python3 -m pip install -r requirements.txt
     ```
 
 5. To check this is all set up, run `python3 sync.py` and enter your attendance ID when prompted. You shouldn't see any errors.
