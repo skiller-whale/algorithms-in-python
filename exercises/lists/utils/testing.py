@@ -4,6 +4,9 @@ import time
 import matplotlib.pyplot as plt
 
 
+OCCURRENCES_TIMING_FIGURE = 'count_occurrences_timing.png'
+
+
 def time_plot_count_occurrences(count_occurrences, count_occurrences_optimized):
     """Time and plot `count_occurrences` and `count_occurrences_optimized`
         on input of different size.
@@ -34,4 +37,6 @@ def time_plot_count_occurrences(count_occurrences, count_occurrences_optimized):
     if times_optimized:
         plot_cubic_polyfit(Ns, times_optimized, ax, label='count_occurrences_optimized')
 
-    plt.show()
+    plt.savefig(OCCURRENCES_TIMING_FIGURE)
+    plt.close()
+    print(f'Figure saved to {OCCURRENCES_TIMING_FIGURE}.')

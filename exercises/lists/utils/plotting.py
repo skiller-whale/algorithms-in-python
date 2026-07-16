@@ -4,6 +4,7 @@ from pathlib import Path
 
 
 UTILS_PATH = Path(__file__).parent
+LIST_TIMING_FIGURE = 'list_append_timing.png'
 
 
 def plot_list_timing(times):
@@ -34,7 +35,10 @@ def plot_list_timing(times):
     ax.ticklabel_format(style='plain')
 
     plt.tight_layout()
-    plt.show()
+    plt.savefig(LIST_TIMING_FIGURE)
+    plt.close(fig)
+    print(f'Figure saved to {LIST_TIMING_FIGURE}.')
+
 
 def plot_cubic_polyfit(Ns, times, ax=None, label=''):
     """Plots a list of times and a cubic approximation.

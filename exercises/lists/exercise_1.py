@@ -11,7 +11,7 @@ from utils.plotting import plot_list_timing
         in seconds since the start of the program. You can subtract the
         return value of `perf_counter()` before and after the call to append.
 
-* Run the script and examine the plot.
+* Run the script, then open `list_append_timing.png` to examine the plot.
     Can you explain the pattern you see?
     What can you say about the time complexity of `append`?
 """
